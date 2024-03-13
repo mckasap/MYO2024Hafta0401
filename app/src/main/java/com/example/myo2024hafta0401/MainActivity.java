@@ -38,14 +38,16 @@ public class MainActivity extends AppCompatActivity {
         }
     });
 
+    updateListView();
     }
     private void updateListView(){
 
         tv.setText(""+ sb.getProgress());
+        int carpan= sb.getProgress();
         ArrayList<String> liste= new ArrayList<>();
-
-        liste.add("1*1=1");
-
+        for (int i=1;i<=12;i++) {
+            liste.add(i+"*"+carpan+"="+(carpan*i));
+        }
         ArrayAdapter<String> adap= new ArrayAdapter<>(MainActivity.this,
                 android.R.layout.simple_list_item_1,liste);
 
